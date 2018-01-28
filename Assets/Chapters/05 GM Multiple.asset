@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe10878310ed9b14da3f80970bf9130e, type: 3}
+  m_Name: 05 GM Multiple
+  m_EditorClassIdentifier: 
+  settings:
+    shapeRemainder: 6
+    shapeCount: 2
+  nextChapterOnFailure: {fileID: 0}
+  nextChapterOnMiddle: {fileID: 11400000, guid: 4f1dbb15d2a49824db3fe5898fa5652c,
+    type: 2}
+  nextChapterOnSuccess: {fileID: 11400000, guid: ab31a1a88ccc53f47ab23c0479774039,
+    type: 2}

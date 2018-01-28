@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
+  m_Name: 00 SQ Intro
+  m_EditorClassIdentifier: 
+  elements:
+  - fromTime: 0
+    toTime: 4.5
+    sprite: {fileID: 0}
+    text: Lily est une amie.
+  - fromTime: 2
+    toTime: 7.5
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 5
+    toTime: 9.5
+    sprite: {fileID: 0}
+    text: "Elle est super \xE9nergique, toujours le sourire aux l\xE8vres."
+  - fromTime: 5
+    toTime: 9.5
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 10
+    toTime: 14.5
+    sprite: {fileID: 0}
+    text: "Elle a fait de grandes \xE9tudes, et elle \xE9tait tr\xE8s forte."
+  - fromTime: 10
+    toTime: 14.5
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 15
+    toTime: 19.5
+    sprite: {fileID: 0}
+    text: "Je ne comprends m\xEAme pas tout ce qu'elle fait."
+  - fromTime: 15
+    toTime: 19.5
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 20
+    toTime: 30
+    sprite: {fileID: 0}
+    text: Entre nous, on va imaginer qu'elle met des formes dans leur encoche.
+  duration: 23
+  nextChapter: {fileID: 11400000, guid: 0ebfeb201b43aa04aa15942386613b98, type: 2}

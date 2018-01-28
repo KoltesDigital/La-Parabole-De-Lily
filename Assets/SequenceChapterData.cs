@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public struct SequenceElement
+public class SequenceElement
 {
 	public float fromTime;
 	public float toTime;
@@ -14,4 +14,6 @@ public struct SequenceElement
 public class SequenceChapterData : ChapterData
 {
 	public SequenceElement[] elements;
+	public float duration;
+	public ChapterData nextChapter;
 }

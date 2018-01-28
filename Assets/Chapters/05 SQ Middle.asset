@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
+  m_Name: 05 SQ Middle
+  m_EditorClassIdentifier: 
+  elements:
+  - fromTime: 0
+    toTime: 4.5
+    sprite: {fileID: 0}
+    text: Bon parfois elle faisait quelques erreurs, mais c'est normal.
+  - fromTime: 0
+    toTime: 0
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 5
+    toTime: 9.5
+    sprite: {fileID: 0}
+    text: Et cela lui donnait la motivation de faire encore mieux le lendemain.
+  duration: 8
+  nextChapter: {fileID: 11400000, guid: d55b2c5e97ef19b4cbfea4605d670255, type: 2}

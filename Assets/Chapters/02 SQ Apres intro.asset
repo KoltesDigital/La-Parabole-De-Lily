@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
+  m_Name: 02 SQ Apres intro
+  m_EditorClassIdentifier: 
+  elements:
+  - fromTime: 0
+    toTime: 4.5
+    sprite: {fileID: 0}
+    text: "Comme \xE7a ouais. Elle \xE9tait super forte \xE0 \xE7a."
+  - fromTime: 0
+    toTime: 0
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 5
+    toTime: 9.5
+    sprite: {fileID: 0}
+    text: "Et donc elle avait trouv\xE9 un job parfait pour elle."
+  - fromTime: 5
+    toTime: 9.5
+    sprite: {fileID: 0}
+    text: 
+  - fromTime: 10
+    toTime: 14.5
+    sprite: {fileID: 0}
+    text: Tous les jours, elle se rendait au boulot. Elle avait plein de taf.
+  duration: 13
+  nextChapter: {fileID: 11400000, guid: fc078dd65a6ad8a4a9d8327be6151c11, type: 2}

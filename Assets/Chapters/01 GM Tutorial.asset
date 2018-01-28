@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe10878310ed9b14da3f80970bf9130e, type: 3}
+  m_Name: 01 GM Tutorial
+  m_EditorClassIdentifier: 
+  settings:
+    shapeRemainder: 1
+    shapeCount: 1
+  nextChapterOnFailure: {fileID: 11400000, guid: 548239bdf71c0af4fa33514f288a9f80,
+    type: 2}
+  nextChapterOnMiddle: {fileID: 11400000, guid: 548239bdf71c0af4fa33514f288a9f80,
+    type: 2}
+  nextChapterOnSuccess: {fileID: 11400000, guid: 548239bdf71c0af4fa33514f288a9f80,
+    type: 2}
