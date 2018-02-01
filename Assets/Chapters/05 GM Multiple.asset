@@ -14,7 +14,9 @@ MonoBehaviour:
   settings:
     shapeRemainder: 6
     shapeCount: 2
-  nextChapterOnFailure: {fileID: 0}
+    avoidsMismatch: 0
+  nextChapterOnFailure: {fileID: 11400000, guid: 769d60e883b65fd46883e99a41fcd28f,
+    type: 2}
   nextChapterOnMiddle: {fileID: 11400000, guid: 4f1dbb15d2a49824db3fe5898fa5652c,
     type: 2}
   nextChapterOnSuccess: {fileID: 11400000, guid: ab31a1a88ccc53f47ab23c0479774039,

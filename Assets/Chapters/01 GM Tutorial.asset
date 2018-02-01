@@ -11,9 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe10878310ed9b14da3f80970bf9130e, type: 3}
   m_Name: 01 GM Tutorial
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 0}
+  stopMusic: 0
   settings:
     shapeRemainder: 1
     shapeCount: 1
+    avoidsMismatch: 0
+    tutorial: 1
   nextChapterOnFailure: {fileID: 11400000, guid: 548239bdf71c0af4fa33514f288a9f80,
     type: 2}
   nextChapterOnMiddle: {fileID: 11400000, guid: 548239bdf71c0af4fa33514f288a9f80,

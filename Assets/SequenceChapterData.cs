@@ -7,6 +7,7 @@ public class SequenceElement
 	public float fromTime;
 	public float toTime;
 	public Sprite sprite;
+	[Multiline]
 	public string text;
 }
 

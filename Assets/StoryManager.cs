@@ -18,6 +18,13 @@ public class StoryManager : MonoBehaviour
 	{
 		currentChapter = chapter;
 
+		if (currentChapter == null)
+		{
+			return;
+		}
+
+		AudioManager.instance.Process(currentChapter);
+
 		if (currentChapter is SequenceChapterData)
 		{
 			var data = currentChapter as SequenceChapterData;
@@ -34,5 +41,13 @@ public class StoryManager : MonoBehaviour
 	void Start()
 	{
 		OpenChapter(firstChapter);
+	}
+
+	void Update()
+	{
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 }

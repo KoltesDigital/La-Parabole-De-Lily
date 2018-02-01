@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
+  m_Name: 08 SQ Failure
+  m_EditorClassIdentifier: 
+  playMusic: {fileID: 0}
+  stopMusic: 0
+  elements:
+  - fromTime: 0
+    toTime: 4.5
+    sprite: {fileID: 0}
+    text: "Mais tu le fais expr\xE8s l\xE0 ou quoi ?!"
+  - fromTime: 6
+    toTime: 8.5
+    sprite: {fileID: 21300000, guid: b244122b912dce94590e1dde7d081c6d, type: 3}
+    text: 
+  - fromTime: 7
+    toTime: 12.5
+    sprite: {fileID: 0}
+    text: '"J''en ai marre. Je me casse", qu''elle a dit.
+
+      Et elle l''a fait.'
+  - fromTime: 9
+    toTime: 13.5
+    sprite: {fileID: 21300000, guid: f47d247fa316e3f4dbf5c326320a06bf, type: 3}
+    text: 
+  - fromTime: 15
+    toTime: 19.5
+    sprite: {fileID: 0}
+    text: "Elle avait un CDI, un appartement, le job de ses r\xEAves.\nEt pourtant...
+      elle n'\xE9tait pas heureuse."
+  duration: 21
+  nextChapter: {fileID: 11400000, guid: cb277b7ec8cf0374487c16c56d738413, type: 2}

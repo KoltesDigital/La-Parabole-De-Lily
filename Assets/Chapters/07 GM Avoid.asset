@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe10878310ed9b14da3f80970bf9130e, type: 3}
+  m_Name: 07 GM Avoid
+  m_EditorClassIdentifier: 
+  settings:
+    shapeRemainder: 6
+    shapeCount: 2
+    avoidsMismatch: 1
+  nextChapterOnFailure: {fileID: 11400000, guid: 40a48600d8b40af4e94f7dd4dded8714,
+    type: 2}
+  nextChapterOnMiddle: {fileID: 11400000, guid: 82cbc7135bac5a04aaf8df2336f9340f,
+    type: 2}
+  nextChapterOnSuccess: {fileID: 11400000, guid: b3e8a449b153e414b85cd4bf206e7f36,
+    type: 2}

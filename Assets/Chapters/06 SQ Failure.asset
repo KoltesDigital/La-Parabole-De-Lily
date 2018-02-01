@@ -11,18 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
   m_Name: 06 SQ Failure
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 0}
+  stopMusic: 1
   elements:
-  - fromTime: 0
-    toTime: 4.5
+  - fromTime: 2
+    toTime: 6.5
     sprite: {fileID: 0}
-    text: "Euh... l\xE0 je sais pas trop ce qu'elle a foutu."
+    text: "Euh... l\xE0 je sais pas trop ce qu'elle fait."
   - fromTime: 0
-    toTime: 0
-    sprite: {fileID: 0}
+    toTime: 6.5
+    sprite: {fileID: 21300000, guid: 5956a9b508dd6774bbfcc9ac699636e0, type: 3}
     text: 
-  - fromTime: 5
-    toTime: 9.5
+  - fromTime: 7
+    toTime: 11.5
     sprite: {fileID: 0}
     text: "T\xE2che de t'appliquer la prochaine fois."
-  duration: 8
+  duration: 12
   nextChapter: {fileID: 11400000, guid: b942cbed104b67840a3de2bba9748457, type: 2}

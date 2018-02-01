@@ -6,6 +6,8 @@ public struct GameSettings
 {
 	public int shapeRemainder;
 	public int shapeCount;
+	public bool avoidsMismatch;
+	public bool tutorial;
 }
 
 [CreateAssetMenu()]

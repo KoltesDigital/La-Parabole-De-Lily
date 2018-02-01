@@ -11,26 +11,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
   m_Name: 02 SQ Apres intro
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 0}
+  stopMusic: 0
   elements:
   - fromTime: 0
     toTime: 4.5
     sprite: {fileID: 0}
-    text: "Comme \xE7a ouais. Elle \xE9tait super forte \xE0 \xE7a."
-  - fromTime: 0
-    toTime: 0
-    sprite: {fileID: 0}
+    text: "Comme \xE7a ouais. Elle est super forte \xE0 \xE7a."
+  - fromTime: 2
+    toTime: 6.5
+    sprite: {fileID: 21300000, guid: ec70fc1587ef10f4bbe266546076f2a3, type: 3}
     text: 
   - fromTime: 5
     toTime: 9.5
     sprite: {fileID: 0}
-    text: "Et donc elle avait trouv\xE9 un job parfait pour elle."
-  - fromTime: 5
-    toTime: 9.5
-    sprite: {fileID: 0}
+    text: "Et forc\xE9ment elle a trouv\xE9 un job parfait pour elle."
+  - fromTime: 7
+    toTime: 12.5
+    sprite: {fileID: 21300000, guid: cb4a9306865fea64f8c605b1cfc0f958, type: 3}
     text: 
   - fromTime: 10
     toTime: 14.5
     sprite: {fileID: 0}
-    text: Tous les jours, elle se rendait au boulot. Elle avait plein de taf.
+    text: Tous les jours, elle se rend au boulot. Elle a plein de taf.
   duration: 13
   nextChapter: {fileID: 11400000, guid: fc078dd65a6ad8a4a9d8327be6151c11, type: 2}

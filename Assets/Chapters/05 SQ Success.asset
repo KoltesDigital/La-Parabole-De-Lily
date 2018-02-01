@@ -11,18 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
   m_Name: 05 SQ Success
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 0}
+  stopMusic: 0
   elements:
   - fromTime: 0
     toTime: 4.5
     sprite: {fileID: 0}
-    text: "Elle \xE9tait fi\xE8re de son travail."
-  - fromTime: 0
-    toTime: 0
-    sprite: {fileID: 0}
+    text: "Elle est fi\xE8re de son travail."
+  - fromTime: 2
+    toTime: 7.5
+    sprite: {fileID: 21300000, guid: c1f2607639b25ce41a7d6144c8c38b46, type: 3}
     text: 
   - fromTime: 5
     toTime: 9.5
     sprite: {fileID: 0}
-    text: "Et d\xE8s le lendemain, elle se remettait \xE0 travailler."
+    text: "Et d\xE8s le lendemain, elle se remet \xE0 travailler."
   duration: 8
   nextChapter: {fileID: 11400000, guid: d55b2c5e97ef19b4cbfea4605d670255, type: 2}

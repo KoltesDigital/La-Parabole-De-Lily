@@ -33,14 +33,23 @@ public class ShapeManager : MonoBehaviour
 	[SerializeField]
 	private float margin;
 
+	[SerializeField]
+	private float avoidDistance;
+
+	[SerializeField]
+	private float avoidRatio;
+
+	[SerializeField]
+	private float avoidMaxForce;
+
 	private Vector2 previousMousePosition = Vector2.zero;
 	private Shape draggedBlock = null;
 
 	private GameChapterData chapter;
 	private GameSettings settings;
 
-	private bool hasSuccess;
-	private bool hasFailure;
+	private int successCount;
+	private int failureCount;
 
 	private void Awake()
 	{
@@ -77,6 +86,18 @@ public class ShapeManager : MonoBehaviour
 			break;
 		}
 
+		if (settings.tutorial)
+		{
+			if (list == blocks)
+			{
+				shape.position = new Vector2(screenSize.x * .5f - 400f, screenSize.y * .5f);
+			}
+			if (list == collectors)
+			{
+				shape.position = new Vector2(screenSize.x * .5f + 400f, screenSize.y * .5f);
+			}
+		}
+
 		list.Add(shape);
 	}
 
@@ -106,8 +127,8 @@ public class ShapeManager : MonoBehaviour
 		chapter = data;
 		settings = data.settings;
 
-		hasSuccess = false;
-		hasFailure = false;
+		successCount = 0;
+		failureCount = 0;
 
 		for (int i = 0; i < settings.shapeCount; ++i)
 		{
@@ -151,11 +172,11 @@ public class ShapeManager : MonoBehaviour
 
 					if (draggedBlock.type == droppedCollector.type)
 					{
-						hasSuccess = true;
+						++successCount;
 					}
 					else
 					{
-						hasFailure = true;
+						++failureCount;
 					}
 
 					draggedBlock.Hide();
@@ -172,17 +193,17 @@ public class ShapeManager : MonoBehaviour
 
 					if (blocks.Count == 0)
 					{
-						if (hasSuccess && hasFailure)
-						{
-							StoryManager.instance.OpenChapter(chapter.nextChapterOnMiddle);
-						}
-						else if (hasSuccess)
+						if (failureCount < 2)
 						{
 							StoryManager.instance.OpenChapter(chapter.nextChapterOnSuccess);
 						}
-						else
+						else if (successCount < 2)
 						{
 							StoryManager.instance.OpenChapter(chapter.nextChapterOnFailure);
+						}
+						else
+						{
+							StoryManager.instance.OpenChapter(chapter.nextChapterOnMiddle);
 						}
 					}
 				}
@@ -193,6 +214,26 @@ public class ShapeManager : MonoBehaviour
 			if (draggedBlock != null)
 			{
 				draggedBlock.position += mousePosition - previousMousePosition;
+
+				if (settings.avoidsMismatch)
+				{
+					foreach (var collector in collectors)
+					{
+						if (collector.type != draggedBlock.type)
+						{
+							var offsetBlock = collector.position - draggedBlock.position;
+							var d2 = offsetBlock.sqrMagnitude;
+
+							Vector2 force = offsetBlock * Mathf.Min(avoidRatio / d2, avoidMaxForce);
+
+							collector.position += force * Time.deltaTime;
+							collector.position = new Vector2(
+								Mathf.Clamp(collector.position.x, margin, screenSize.x - margin),
+								Mathf.Clamp(collector.position.y, margin, screenSize.y - margin)
+								);
+						}
+					}
+				}
 			}
 		}
 

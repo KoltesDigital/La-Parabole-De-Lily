@@ -11,18 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
   m_Name: 04 SQ Apres simple
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 0}
+  stopMusic: 0
   elements:
   - fromTime: 0
     toTime: 4.5
     sprite: {fileID: 0}
-    text: "Elle faisait un travail irr\xE9prochable."
-  - fromTime: 0
-    toTime: 0
-    sprite: {fileID: 0}
+    text: "Elle fait un travail irr\xE9prochable."
+  - fromTime: 2
+    toTime: 7.5
+    sprite: {fileID: 21300000, guid: 7cc8319484258d641ab7f9cda36b27a7, type: 3}
     text: 
   - fromTime: 5
     toTime: 9.5
     sprite: {fileID: 0}
-    text: Du coup ses patrons lui donnaient encore plus de boulot.
+    text: Du coup ses patrons lui donnent encore plus de boulot.
   duration: 8
   nextChapter: {fileID: 11400000, guid: d55b2c5e97ef19b4cbfea4605d670255, type: 2}

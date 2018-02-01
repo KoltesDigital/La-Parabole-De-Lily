@@ -20,8 +20,11 @@ public class ImageManager : MonoBehaviour
 		image.DOFade(1f, .3f);
 	}
 
-	public void Hide()
+	public void Hide(Sprite sprite)
 	{
-		image.DOFade(0f, .3f);
+		if (image.sprite == sprite)
+		{
+			image.DOFade(0f, .3f);
+		}
 	}
 }

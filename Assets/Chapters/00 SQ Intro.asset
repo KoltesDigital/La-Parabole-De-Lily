@@ -11,30 +11,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a5ed7c7beafc469ea2c6ba7cee256, type: 3}
   m_Name: 00 SQ Intro
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 8300000, guid: f2bbb67c9fb65ca4ebe780697d94d6e9, type: 3}
+  stopMusic: 0
   elements:
-  - fromTime: 0
+  - fromTime: 1
     toTime: 4.5
     sprite: {fileID: 0}
-    text: Lily est une amie.
+    text: Lily est une super amie.
   - fromTime: 2
-    toTime: 7.5
-    sprite: {fileID: 0}
+    toTime: 6.5
+    sprite: {fileID: 21300000, guid: 7da7e2dbecfbb4a49b3b10152469b5db, type: 3}
     text: 
   - fromTime: 5
     toTime: 9.5
     sprite: {fileID: 0}
-    text: "Elle est super \xE9nergique, toujours le sourire aux l\xE8vres."
-  - fromTime: 5
-    toTime: 9.5
-    sprite: {fileID: 0}
+    text: "Elle est m\xE9ga \xE9nergique, toujours le sourire aux l\xE8vres."
+  - fromTime: 7
+    toTime: 12.5
+    sprite: {fileID: 21300000, guid: c888e6f197d6622438403d0a649599e3, type: 3}
     text: 
   - fromTime: 10
     toTime: 14.5
     sprite: {fileID: 0}
-    text: "Elle a fait de grandes \xE9tudes, et elle \xE9tait tr\xE8s forte."
-  - fromTime: 10
-    toTime: 14.5
-    sprite: {fileID: 0}
+    text: "Elle a fait de grandes \xE9tudes, et elle est tr\xE8s forte."
+  - fromTime: 13
+    toTime: 18
+    sprite: {fileID: 21300000, guid: da8f9b9c270461f4893a75d92e97c16a, type: 3}
     text: 
   - fromTime: 15
     toTime: 19.5
@@ -45,8 +47,13 @@ MonoBehaviour:
     sprite: {fileID: 0}
     text: 
   - fromTime: 20
-    toTime: 30
+    toTime: 24.5
     sprite: {fileID: 0}
-    text: Entre nous, on va imaginer qu'elle met des formes dans leur encoche.
-  duration: 23
+    text: "Et puis j'ai pas envie de vous perdre dans l'histoire.\nOn n'a qu'\xE0
+      dire..."
+  - fromTime: 25
+    toTime: -1
+    sprite: {fileID: 0}
+    text: "On n'a qu'\xE0 dire qu'elle met des formes dans leur encoche."
+  duration: 27
   nextChapter: {fileID: 11400000, guid: 0ebfeb201b43aa04aa15942386613b98, type: 2}

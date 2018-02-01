@@ -26,16 +26,19 @@ public class SequenceManager : MonoBehaviour
 			TextManager.instance.Show(element.text);
 		}
 
-		yield return new WaitForSeconds(element.toTime - element.fromTime);
-
-		if (element.sprite != null)
+		if (element.toTime >= 0f)
 		{
-			ImageManager.instance.Hide();
-		}
+			yield return new WaitForSeconds(element.toTime - element.fromTime);
 
-		if (element.text != "")
-		{
-			TextManager.instance.Hide();
+			if (element.sprite != null)
+			{
+				ImageManager.instance.Hide(element.sprite);
+			}
+
+			if (element.text != "")
+			{
+				TextManager.instance.Hide(element.text);
+			}
 		}
 	}
 

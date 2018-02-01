@@ -19,7 +19,11 @@ public class TextManager : MonoBehaviour
 		if (text.color.a > 0f)
 		{
 			text.DOFade(0f, .3f)
-				.OnComplete(() => Show(str));
+				.OnComplete(() =>
+				{
+					text.text = str;
+					text.DOFade(1f, .3f);
+				});
 			return;
 		}
 
@@ -27,8 +31,11 @@ public class TextManager : MonoBehaviour
 		text.DOFade(1f, .3f);
 	}
 
-	public void Hide()
+	public void Hide(string str)
 	{
-		text.DOFade(0f, .3f);
+		if (text.text == str)
+		{
+			text.DOFade(0f, .3f);
+		}
 	}
 }
