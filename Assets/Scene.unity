@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 200}
-  m_SizeDelta: {x: -200, y: 200}
+  m_AnchoredPosition: {x: 0.0000038146973, y: 500}
+  m_SizeDelta: {x: -200, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215153352
 MonoBehaviour:
@@ -229,8 +229,8 @@ RectTransform:
   m_Father: {fileID: 1154094641}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810db1e40da3b6948a2ff7c0ce3fb19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenSize: {x: 1920, y: 1080}
+  screenHeight: 1080
   shapePrefab: {fileID: 1158179419795150, guid: e9bd716b00acaa24d8145f5874ce10f2,
     type: 2}
   blockSprites:
@@ -304,7 +304,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -466,10 +466,10 @@ RectTransform:
   m_Father: {fileID: 1154094641}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812660668
 MonoBehaviour:
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -525,7 +525,6 @@ GameObject:
   - component: {fileID: 1154094641}
   - component: {fileID: 1154094640}
   - component: {fileID: 1154094639}
-  - component: {fileID: 1154094638}
   - component: {fileID: 1154094642}
   - component: {fileID: 1154094643}
   m_Layer: 5
@@ -535,22 +534,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1154094638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1154094637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1154094639
 MonoBehaviour:
   m_ObjectHideFlags: 0

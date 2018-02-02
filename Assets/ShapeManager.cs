@@ -7,7 +7,7 @@ public class ShapeManager : MonoBehaviour
 	static public ShapeManager instance { get; private set; }
 
 	[SerializeField]
-	private Vector2 screenSize = new Vector2(1920, 1080);
+	private float screenHeight = 1080f;
 
 	[SerializeField]
 	private GameObject shapePrefab;
@@ -51,6 +51,14 @@ public class ShapeManager : MonoBehaviour
 	private int successCount;
 	private int failureCount;
 
+	private float screenRatio
+	{
+		get
+		{
+			return Screen.width / (float)Screen.height;
+		}
+	}
+
 	private void Awake()
 	{
 		instance = this;
@@ -67,7 +75,9 @@ public class ShapeManager : MonoBehaviour
 
 		for (; ; )
 		{
-			shape.position = new Vector2(Random.Range(margin, screenSize.x - margin), Random.Range(margin, screenSize.y - margin));
+			shape.position = new Vector2(
+				Random.Range(-screenRatio * screenHeight * .5f + margin, screenRatio * screenHeight * .5f - margin),
+				Random.Range(-screenHeight * .5f + margin, screenHeight * .5f - margin));
 
 			if (blocks
 				.Where(other => Vector2.Distance(shape.position, other.position) < spawnDistance)
@@ -90,11 +100,11 @@ public class ShapeManager : MonoBehaviour
 		{
 			if (list == blocks)
 			{
-				shape.position = new Vector2(screenSize.x * .5f - 400f, screenSize.y * .5f);
+				shape.position = new Vector2(-400f, 0f);
 			}
 			if (list == collectors)
 			{
-				shape.position = new Vector2(screenSize.x * .5f + 400f, screenSize.y * .5f);
+				shape.position = new Vector2(400f, 0f);
 			}
 		}
 
@@ -140,7 +150,9 @@ public class ShapeManager : MonoBehaviour
 	void Update()
 	{
 		var viewportPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-		var mousePosition = new Vector2(viewportPosition.x * screenSize.x, viewportPosition.y * screenSize.y);
+		var mousePosition = new Vector2(
+			(viewportPosition.x - .5f) * screenRatio * screenHeight,
+			(viewportPosition.y - .5f) * screenHeight);
 
 		if (blocks.Count > 0)
 		{
@@ -228,9 +240,8 @@ public class ShapeManager : MonoBehaviour
 
 							collector.position += force * Time.deltaTime;
 							collector.position = new Vector2(
-								Mathf.Clamp(collector.position.x, margin, screenSize.x - margin),
-								Mathf.Clamp(collector.position.y, margin, screenSize.y - margin)
-								);
+								Mathf.Clamp(collector.position.x, -screenRatio * screenHeight * .5f + margin, screenRatio * screenHeight * .5f - margin),
+								Mathf.Clamp(collector.position.y, -screenHeight * .5f + margin, screenHeight * .5f - margin));
 						}
 					}
 				}
