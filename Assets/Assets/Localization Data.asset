@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4c2c179e8787e4fb66fef40add74d2, type: 3}
+  m_Name: Localization Data
+  m_EditorClassIdentifier: 
+  texts:
+  - text: Lily est une super amie.
+    translations:
+    - language: en
+      text: Lily is a good friend of mine.
+  - text: "Elle est m\xE9ga \xE9nergique, toujours le sourire aux l\xE8vres."
+    translations:
+    - language: en
+      text: She's full of energy and always smiling.
+  - text: "Elle a fait de grandes \xE9tudes, et elle est tr\xE8s forte."
+    translations:
+    - language: en
+      text: She did well at university, and she's good at everything she tries.
+  - text: "Je ne comprends m\xEAme pas tout ce qu'elle fait."
+    translations:
+    - language: en
+      text: I don't even understand all of what she does.
+  - text: "Et puis j'ai pas envie de vous perdre dans l'histoire.\nOn n'a qu'\xE0
+      dire..."
+    translations:
+    - language: en
+      text: 'And I don''t want to make this story too complicated.
+
+        Let''s just say...'
+  - text: "On n'a qu'\xE0 dire qu'elle met des formes dans leur encoche."
+    translations:
+    - language: en
+      text: Let's just say she puts shapes into their slots.
+  - text: "Comme \xE7a ouais. Elle est super forte \xE0 \xE7a."
+    translations:
+    - language: en
+      text: Like that, yeah. She's very good at it.
+  - text: "Et forc\xE9ment elle a trouv\xE9 un job parfait pour elle."
+    translations:
+    - language: en
+      text: And of course, she found a perfect job for her.
+  - text: Tous les jours, elle se rend au boulot. Elle a plein de taf.
+    translations:
+    - language: en
+      text: Every day she goes to work. She has a lot to do.
+  - text: "Elle fait un travail irr\xE9prochable."
+    translations:
+    - language: en
+      text: Her work is perfect.
+  - text: Du coup ses patrons lui donnent encore plus de boulot.
+    translations:
+    - language: en
+      text: So naturally her bosses give her even more work.
+  - text: Bon parfois elle fait quelques erreurs, mais c'est normal.
+    translations:
+    - language: en
+      text: Okay sometimes she makes some mistakes, but that's normal.
+  - text: Et cela lui donne la motivation de faire encore mieux le lendemain.
+    translations:
+    - language: en
+      text: And it drives her to do even better the next day.
+  - text: "Elle est fi\xE8re de son travail."
+    translations:
+    - language: en
+      text: She's proud of her work.
+  - text: "Et d\xE8s le lendemain, elle se remet \xE0 travailler."
+    translations:
+    - language: en
+      text: And the very next day, she's back working again.
+  - text: "Euh... l\xE0 je sais pas trop ce qu'elle fait."
+    translations:
+    - language: en
+      text: Humm... I don't know what she's doing right now.
+  - text: "T\xE2che de t'appliquer la prochaine fois."
+    translations:
+    - language: en
+      text: Apply yourself next time.
+  - text: Visiblement elle est dans une mauvaise phase.
+    translations:
+    - language: en
+      text: Apparently she's going through a difficult period.
+  - text: Mais elle va se reprendre.
+    translations:
+    - language: en
+      text: But she'll get back on her feet.
+  - text: "Ah voil\xE0. Parfait, je vous disais."
+    translations:
+    - language: en
+      text: Ha, see. Perfect, I told you so.
+  - text: "Cet incident oubli\xE9, elle retourne au travail."
+    translations:
+    - language: en
+      text: The incident now behind her, she gets back to work.
+  - text: "Mais tu le fais expr\xE8s l\xE0 ou quoi ?!"
+    translations:
+    - language: en
+      text: What the hell are you doing now?
+  - text: '"J''en ai marre. Je me casse", qu''elle a dit.
+
+      Et elle l''a fait.'
+    translations:
+    - language: en
+      text: '"I''ve had enough. I''m out of here," she said.
+
+        And she left.'
+  - text: "Elle avait un CDI, un appartement, le job de ses r\xEAves.\nEt pourtant...
+      elle n'\xE9tait pas heureuse."
+    translations:
+    - language: en
+      text: 'She had a permanent contract, an apartment, her dream job.
+
+        And yet... she wasn''t happy.'
+  - text: "Lily a d\xE9cid\xE9 de prendre son bonheur en main."
+    translations:
+    - language: en
+      text: Lily decided to take responsability for her own happiness.
+  - text: Elle a eu le courage de tout laisser tomber pour changer de vie.
+    translations:
+    - language: en
+      text: She had the courage to sacrifice everything to change her life.
+  - text: "Et je voudrais lui dire \xE0 quel point je suis heureux pour elle."
+    translations:
+    - language: en
+      text: And I'd like to tell her how glad I am for her.
+  - text: "Alors, f\xE9licitations, Lily !"
+    translations:
+    - language: en
+      text: So, congratulations, Lily!

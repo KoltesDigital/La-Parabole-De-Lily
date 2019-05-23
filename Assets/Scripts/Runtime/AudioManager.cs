@@ -1,10 +1,9 @@
 ﻿using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-	static public AudioManager instance { get; private set; }
+	public static AudioManager instance { get; private set; }
 
 	private AudioSource source;
 

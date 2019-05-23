@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-	static public TextManager instance { get; private set; }
+	public static TextManager instance { get; private set; }
 
 	private Text text;
+	private string requestedStr;
 
 	private void Awake()
 	{
@@ -16,6 +17,9 @@ public class TextManager : MonoBehaviour
 
 	public void Show(string str)
 	{
+		requestedStr = str;
+		str = LocalizationManager.instance.GetLocalizedString(str);
+
 		if (text.color.a > 0f)
 		{
 			text.DOFade(0f, .3f)
@@ -33,7 +37,7 @@ public class TextManager : MonoBehaviour
 
 	public void Hide(string str)
 	{
-		if (text.text == str)
+		if (requestedStr == str)
 		{
 			text.DOFade(0f, .3f);
 		}
