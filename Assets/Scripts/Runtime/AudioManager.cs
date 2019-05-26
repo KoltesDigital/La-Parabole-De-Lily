@@ -13,16 +13,26 @@ public class AudioManager : MonoBehaviour
 		source = GetComponent<AudioSource>();
 	}
 
-	private Tween Stop()
-	{
-		return source.DOFade(0f, 5f);
-	}
-
-	private void Play(AudioClip clip)
+	private void FadeIn(AudioClip clip)
 	{
 		source.clip = clip;
 		source.Play();
 		source.DOFade(1f, 1f);
+	}
+
+	private Tween FadeOut(float duration)
+	{
+		return source.DOFade(0f, duration);
+	}
+
+	public void Stop(float duration = .3f)
+	{
+		FadeOut(duration)
+			.OnComplete(() =>
+			{
+				source.Stop();
+				source.clip = null;
+			});
 	}
 
 	public void Process(ChapterData data)
@@ -31,22 +41,17 @@ public class AudioManager : MonoBehaviour
 		{
 			if (source.isPlaying)
 			{
-				Stop()
-					.OnComplete(() => Play(data.playMusic));
+				FadeOut(.3f)
+					.OnComplete(() => FadeIn(data.playMusic));
 			}
 			else
 			{
-				Play(data.playMusic);
+				FadeIn(data.playMusic);
 			}
 		}
 		else if (data.stopMusic)
 		{
-			Stop()
-				.OnComplete(() =>
-				{
-					source.Stop();
-					source.clip = null;
-				});
+			Stop(5f);
 		}
 	}
 }

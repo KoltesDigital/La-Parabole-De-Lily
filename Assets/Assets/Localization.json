@@ -139,6 +139,18 @@
 			"translations": {
 				"en": "So, congratulations, Lily!"
 			}
+		},
+		"Keep Pressing Esc": {
+			"translations": {
+				"en": "Keep pressing Esc to restart game.",
+				"fr": "Continuez d'appuyer sur Échap pour redémarrer le jeu."
+			}
+		},
+		"Move The Mouse": {
+			"translations": {
+				"en": "Move the mouse if you're still here.",
+				"fr": "Déplacez la souris si vous êtes encore là."
+			}
 		}
 	}
 }

@@ -135,3 +135,15 @@ MonoBehaviour:
     translations:
     - language: en
       text: So, congratulations, Lily!
+  - text: Keep Pressing Esc
+    translations:
+    - language: en
+      text: Keep pressing Esc to restart game.
+    - language: fr
+      text: "Continuez d'appuyer sur \xC9chap pour red\xE9marrer le jeu."
+  - text: Move The Mouse
+    translations:
+    - language: en
+      text: Move the mouse if you're still here.
+    - language: fr
+      text: "D\xE9placez la souris si vous \xEAtes encore l\xE0."

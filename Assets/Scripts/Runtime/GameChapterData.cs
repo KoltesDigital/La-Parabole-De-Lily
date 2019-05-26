@@ -10,7 +10,7 @@ public struct GameSettings
 	public bool tutorial;
 }
 
-[CreateAssetMenu()]
+[CreateAssetMenu]
 public class GameChapterData : ChapterData
 {
 	public GameSettings settings;

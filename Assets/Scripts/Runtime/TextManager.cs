@@ -42,4 +42,14 @@ public class TextManager : MonoBehaviour
 			text.DOFade(0f, .3f);
 		}
 	}
+
+	public void ForceHide()
+	{
+		text.DOFade(0f, .3f)
+			.OnComplete(() =>
+			{
+				requestedStr = "";
+				text.text = "";
+			});
+	}
 }

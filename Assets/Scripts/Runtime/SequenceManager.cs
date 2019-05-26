@@ -1,11 +1,12 @@
-﻿using DG.Tweening;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SequenceManager : MonoBehaviour
 {
-	static public SequenceManager instance { get; private set; }
+	public static SequenceManager instance { get; private set; }
+
+	private List<Coroutine> coroutines = new List<Coroutine>();
 
 	private void Awake()
 	{
@@ -53,9 +54,22 @@ public class SequenceManager : MonoBehaviour
 	{
 		foreach (var element in data.elements)
 		{
-			StartCoroutine(Show(element));
+			coroutines.Add(StartCoroutine(Show(element)));
 		}
 
-		StartCoroutine(Complete(data));
+		coroutines.Add(StartCoroutine(Complete(data)));
+	}
+
+	public void Stop()
+	{
+		foreach (var coroutine in coroutines)
+		{
+			StopCoroutine(coroutine);
+		}
+
+		coroutines.Clear();
+
+		ImageManager.instance.ForceHide();
+		TextManager.instance.ForceHide();
 	}
 }

@@ -4,43 +4,29 @@ using UnityEngine;
 
 public class ShapeManager : MonoBehaviour
 {
-	static public ShapeManager instance { get; private set; }
+	public static ShapeManager instance { get; private set; }
 
-	[SerializeField]
-	private float screenHeight = 1080f;
+	public float screenHeight = 1080f;
 
-	[SerializeField]
-	private GameObject shapePrefab;
+	public GameObject shapePrefab;
 
-	[SerializeField]
-	private Sprite[] blockSprites;
+	public Sprite[] blockSprites;
 
-	[SerializeField]
-	private Sprite[] collectorsSprites;
+	public Sprite[] collectorsSprites;
 
 	private List<Shape> blocks = new List<Shape>();
 	private List<Shape> collectors = new List<Shape>();
 
-	[SerializeField]
-	private float dragThreshold;
+	public float dragThreshold;
+	public float dropThreshold;
 
-	[SerializeField]
-	private float dropThreshold;
+	public float spawnDistance;
 
-	[SerializeField]
-	private float spawnDistance;
+	public float margin;
 
-	[SerializeField]
-	private float margin;
-
-	[SerializeField]
-	private float avoidDistance;
-
-	[SerializeField]
-	private float avoidRatio;
-
-	[SerializeField]
-	private float avoidMaxForce;
+	public float avoidDistance;
+	public float avoidRatio;
+	public float avoidMaxForce;
 
 	private Vector2 previousMousePosition = Vector2.zero;
 	private Shape draggedBlock = null;
@@ -132,7 +118,7 @@ public class ShapeManager : MonoBehaviour
 		Spawn(collectors, collectorsSprites, type);
 	}
 
-	public void Initialize(GameChapterData data)
+	public void Play(GameChapterData data)
 	{
 		chapter = data;
 		settings = data.settings;
@@ -147,12 +133,27 @@ public class ShapeManager : MonoBehaviour
 		}
 	}
 
-	void Update()
+	private void Deplete(List<Shape> list)
+	{
+		foreach (var shape in list)
+		{
+			shape.Hide();
+		}
+		list.Clear();
+	}
+
+	public void Stop()
+	{
+		Deplete(blocks);
+		Deplete(collectors);
+	}
+
+	private void Update()
 	{
 		var viewportPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 		var mousePosition = new Vector2(
-			(viewportPosition.x - .5f) * screenRatio * screenHeight,
-			(viewportPosition.y - .5f) * screenHeight);
+			(Mathf.Clamp01(viewportPosition.x) - .5f) * screenRatio * screenHeight,
+			(Mathf.Clamp01(viewportPosition.y) - .5f) * screenHeight);
 
 		if (blocks.Count > 0)
 		{

@@ -11,7 +11,7 @@ public class SequenceElement
 	public string text;
 }
 
-[CreateAssetMenu()]
+[CreateAssetMenu]
 public class SequenceChapterData : ChapterData
 {
 	public SequenceElement[] elements;

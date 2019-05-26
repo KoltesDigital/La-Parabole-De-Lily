@@ -1,9 +1,8 @@
 ﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class Shape : MonoBehaviour
 {
 	public int type;
@@ -28,7 +27,7 @@ public class Shape : MonoBehaviour
 		}
 	}
 
-	void Start()
+	private void Start()
 	{
 		GetComponent<Image>().DOFade(1f, .3f);
 	}

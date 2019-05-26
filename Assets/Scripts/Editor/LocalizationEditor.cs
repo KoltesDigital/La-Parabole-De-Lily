@@ -6,12 +6,12 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-internal class Localization : EditorWindow
+internal class LocalizationWindow : EditorWindow
 {
 	[MenuItem("Tools/Localization")]
 	public static void ShowWindow()
 	{
-		GetWindow(typeof(Localization), true, "Localization");
+		GetWindow(typeof(LocalizationWindow), true, "Localization");
 	}
 
 	private TextAsset jsonAsset;
@@ -36,6 +36,17 @@ internal class Localization : EditorWindow
 		GUILayout.EndVertical();
 	}
 
+	private IEnumerable<TAsset> GetAllAssets<TAsset>() where TAsset : UnityEngine.Object
+	{
+		return AssetDatabase.FindAssets("t:" + typeof(TAsset).Name)
+			.Select(guid =>
+			{
+				var assetPath = AssetDatabase.GUIDToAssetPath(guid);
+				return AssetDatabase.LoadAssetAtPath<TAsset>(assetPath);
+			})
+			.Where(asset => asset != null);
+	}
+
 	private void Process()
 	{
 		var localizationAssetPath = AssetDatabase.GetAssetPath(jsonAsset);
@@ -49,26 +60,32 @@ internal class Localization : EditorWindow
 
 		var usedTexts = new HashSet<string>();
 
-		var guids = AssetDatabase.FindAssets("t:" + typeof(SequenceChapterData).Name);
-		foreach (var guid in guids)
+		void UseText(string text)
 		{
-			var assetPath = AssetDatabase.GUIDToAssetPath(guid);
-			var sequenceChapterData = AssetDatabase.LoadAssetAtPath<SequenceChapterData>(assetPath);
-			if (sequenceChapterData != null)
+			usedTexts.Add(text);
+			if (!localizedTexts.texts.ContainsKey(text))
 			{
-				foreach (var sequenceElement in sequenceChapterData.elements)
+				localizedTexts.texts.Add(text, new JsonLocalizedTextData());
+			}
+		}
+
+		foreach (var sequenceChapterData in GetAllAssets<SequenceChapterData>())
+		{
+			foreach (var sequenceElement in sequenceChapterData.elements)
+			{
+				if (sequenceElement.text != "")
 				{
-					if (sequenceElement.text != "")
-					{
-						usedTexts.Add(sequenceElement.text);
-						if (!localizedTexts.texts.ContainsKey(sequenceElement.text))
-						{
-							localizedTexts.texts.Add(sequenceElement.text, new JsonLocalizedTextData());
-						}
-					}
+					UseText(sequenceElement.text);
 				}
 			}
+		}
 
+		foreach (var extraTextData in GetAllAssets<ExtraTextData>())
+		{
+			foreach (var text in extraTextData.texts)
+			{
+				UseText(text);
+			}
 		}
 
 		foreach (var pair in localizedTexts.texts)
@@ -77,7 +94,7 @@ internal class Localization : EditorWindow
 			{
 				try
 				{
-					pair.Value.translations.Add("WARNING", "UNUSED");
+					Debug.LogErrorFormat("Unused text: {0}", pair.Key);
 				}
 				catch (ArgumentException)
 				{

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ImageManager : MonoBehaviour
 {
-	static public ImageManager instance { get; private set; }
+	public static ImageManager instance { get; private set; }
 
 	private Image image;
 
@@ -26,5 +26,14 @@ public class ImageManager : MonoBehaviour
 		{
 			image.DOFade(0f, .3f);
 		}
+	}
+
+	public void ForceHide()
+	{
+		image.DOFade(0f, .3f)
+			.OnComplete(() =>
+			{
+				image.sprite = null;
+			});
 	}
 }
